@@ -47,7 +47,7 @@ CONFIGURE_ARGS+= --with-ipf=/sbin/ipf
 CONFIGURE_ARGS+= --with-ipfw=/sbin/ipfw
 .endif
 
-post-build:
+test: build
 	cd $(WRKSRC)/test && ./test-fwknop.pl --enable-all
 
 .include <bsd.port.mk>
